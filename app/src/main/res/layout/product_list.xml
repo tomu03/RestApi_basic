@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="15dp"
     app:cardCornerRadius="15dp"
@@ -40,8 +40,7 @@
             android:id="@+id/pricetxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-
+            android:layout_marginTop="4dp"
             android:text="$100"
             android:textSize="18sp"
             android:textStyle="bold"
