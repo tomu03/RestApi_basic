@@ -3,18 +3,18 @@ package com.example.restapiapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ProductApater(private val products:List<Product>): RecyclerView.Adapter<ProductApater.ProductViewHolder>() {
+class ProductAdapter(private val products:List<Product>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        private val productImage:ImageView = itemView.findViewById(R.id.profileImg)
+        private val productImage: ImageView = itemView.findViewById(R.id.profileImg)
         private val productName: TextView = itemView.findViewById(R.id.nameTxt)
         private val productPrice: TextView = itemView.findViewById(R.id.pricetxt)
+        private val productDescription: TextView = itemView.findViewById(R.id.derictxt)
 
         fun bind(product: Product) {
             Glide.with(itemView)
@@ -22,6 +22,7 @@ class ProductApater(private val products:List<Product>): RecyclerView.Adapter<Pr
                 .into(productImage)
             productName.text = product.title
             productPrice.text = "$${product.price}"
+            productDescription.text= product.description
         }
 
     }

@@ -12,13 +12,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class ProductActivity : AppCompatActivity() {
 
     private lateinit var productViewModel: ProductViewModel
-    private lateinit var productAdapter: ProductApater
+    private lateinit var productAdapter: ProductAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
         productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
-        productAdapter = ProductApater(emptyList())
+        productAdapter = ProductAdapter(emptyList())
 
         val refreshBtn: FloatingActionButton = findViewById(R.id.refresBtn)
 
@@ -34,7 +34,7 @@ class ProductActivity : AppCompatActivity() {
 
         productViewModel.products.observe(this, Observer { products ->
             products?.let {
-                productAdapter = ProductApater(it)
+                productAdapter = ProductAdapter(it)
                 recyclerView.adapter = productAdapter
             }
         })
